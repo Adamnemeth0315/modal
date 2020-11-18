@@ -1,21 +1,23 @@
 const openButton = document.querySelector('.getModalBtn');
 const modal = document.querySelector('.modal');
 const closeModal = document.querySelector('.modal__close');
+const closeButton = document.querySelector('.closebtn');
 
+const giveClassFunction = () => modal.setAttribute('class', 'modal showModal');
+const takeAwayClassFunction = () => modal.setAttribute('class', 'modal');
 
-openButton.addEventListener('click', function (){
-    modal.style.display = 'block';
-});
+openButton.addEventListener('click', giveClassFunction);
 
-function closeTheModal() {
+/*function closeTheModal() {
     modal.style.display = 'none';
-}
+}*/
 
-closeModal.addEventListener('click', closeTheModal);
+closeModal.addEventListener('click', takeAwayClassFunction);
+closeButton.addEventListener('click', takeAwayClassFunction);
 
 window.addEventListener('click', function (ev){
     if (ev.target == modal) {
-        modal.style.display = 'none';
+        modal.setAttribute('class', 'modal');
     }
 });
 

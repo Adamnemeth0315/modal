@@ -8,9 +8,8 @@ html {
 
 .modal {
     display: none;
-    position: fixed;
+    position: absolute;
     z-index: 1;
-    padding:300px 300px 300px 300px;
     left: 0;
     top:0;
     width: 100%;
@@ -21,10 +20,9 @@ html {
 
 .modal.showModal{ 
     display: flex;
+    position: absolute;
     flex-wrap: nowrap;
-    position:fixed ;
     z-index: 1;
-    padding:300px 300px 300px 300px;
     left: 0;
     top:0;
     width: 100%;
@@ -32,6 +30,7 @@ html {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.3);
     transition: all .3s;
+    justify-content: center;
 }
 
 .modal-content {
@@ -43,13 +42,23 @@ html {
     width: 100%;
   }
 
-  @media only screen and (min-width: 560px){
+  @media screen and (min-width: 560px){
     .modal-content {
         background-color: #fdfdfd;
         margin: auto;
         padding: 15px;
         border: 1px solid #888;
-        width: 50%;
+        max-width: 50%;
+      }
+  }
+
+  .modal__text {
+      flex-wrap: nowrap;
+      min-width: 100%;
+  }
+  @media screen and (min-width: 560px) {
+      .modal__text{
+          min-width: 70%;
       }
   }
 
@@ -71,6 +80,7 @@ html {
 
   .modal__footer {
     display: flex;
+    flex-wrap: nowrap;
 }
 
 @media only screen and (min-width: 560px) {
@@ -96,8 +106,13 @@ html {
     .closebtn {
         background-color: #FF2233;
         text-align: center;
-        padding: 0.7rem 1.2rem;
+        padding: 0.7rem 1rem;
         text-decoration: none;
         border: solid 1px transparent;
-        margin: 1.2rem;
+        margin: 0.6rem;
+  }
+
+  .succedbtn:hover, .closebtn:hover {
+      cursor: pointer;
+      box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.7);
   }

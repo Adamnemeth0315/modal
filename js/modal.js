@@ -15,9 +15,5 @@ openButton.addEventListener('click', giveClassFunction);
 closeModal.addEventListener('click', takeAwayClassFunction);
 closeButton.addEventListener('click', takeAwayClassFunction);
 
-window.addEventListener('click', function (ev){
-    if (ev.target == modal) {
-        modal.setAttribute('class', 'modal');
-    }
-});
+modal.addEventListener('click', takeAwayClassFunction);
 
